@@ -21,6 +21,7 @@ formi.addEventListener('submit', e => {
         newElement.setAttribute("type","text")
         newElement.setAttribute("disabled",true);
         newElement.setAttribute('value',answer.value);
+        newElement.setAttribute('id',"nameans");
         newElement.classList.add("req_box")
         document.querySelector('.req').append(newElement)
         answer.value=""
@@ -35,6 +36,9 @@ function getCheckedValue(radios) {
         
 }
 document.querySelector(".btn.btn-light").addEventListener('click', e => {
+    let nameans = document.querySelector("#nameans");
+    if(nameans.value == "")
+    return false;
     e.preventDefault();
     var checkedRadios = document.querySelectorAll('[type="radio"]:checked');
     var corectAnswerCount = 0
